@@ -1,0 +1,9 @@
+.listUsers{
+    margin-top: 10px;
+    width: 370px;
+    height: 380px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color: #fcfbfc;
+}
+.app{
+    display: flex;
+    justify-content: center;
+}
+.wrapperUsers{
+    margin-top: 50px;
+    background-color: #cadbb7;
+    width: 400px;
+    min-height: 500px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wrapperUsers h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.input{
+    background-color: #fcfbfc;
+    width: 350px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 14px;
+}

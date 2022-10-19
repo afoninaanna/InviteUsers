@@ -6,8 +6,8 @@ function User({ firstName, lastName, id, email, avatar }) {
     <div className={s.user}>
         <img src={avatar}/>
         <div className={s.content}>
-           <span>{firstName} {lastName}</span>
-           <p>{email}</p>
+           <p>{firstName} {lastName}</p>
+           <span>{email}</span>
         </div>
         <img className={s.plusMinus}/>
     </div>

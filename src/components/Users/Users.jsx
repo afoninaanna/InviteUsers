@@ -1,7 +1,7 @@
 import User from '../User/User'
 import s from './style.module.css'
 
-function Users({ items, searchQuery, onClickInvate, invitations }) {
+function Users({ items, searchQuery, onClickInvate, invitations}) {
   return (
     <div className={s.listUsers}>
     {items.filter((item)=>{

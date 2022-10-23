@@ -6,6 +6,7 @@ import s from './style.module.css';
 function InviteUsers() {
   const [searchQuery, setSearchQuery] = useState('');
   const [users, setUsers] = useState([]);
+  const [invitations, setInvitations] = useState([]);
   useEffect(() => {
     axios
       .get("https://reqres.in/api/users")
@@ -13,8 +14,17 @@ function InviteUsers() {
         setUsers(data.data.data);
       });
   }, []);
-  function inputOnChange (event){
+  function inputOnChange (event) {
     setSearchQuery(event.target.value);
+  }
+  function onClickInvate(id){
+    if(invitations.includes(id)){
+      setInvitations((prev) => 
+        prev.filter((prevId) => prevId !== id)
+      )
+    } else {
+      setInvitations([...invitations, id])
+    }
   }
   return (
     <div className={s.app}>
@@ -26,7 +36,11 @@ function InviteUsers() {
           type='text' 
           className={s.input} 
           placeholder='поиск'/>
-        <Users items={users} searchQuery={searchQuery}/>
+        <Users 
+          invitations={invitations}
+          items={users} 
+          searchQuery={searchQuery} 
+          onClickInvate={onClickInvate}/>
       </div>
     </div>
   )

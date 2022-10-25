@@ -52,7 +52,7 @@ function InviteUsers() {
               onClickInvate={onClickInvate}
               />
               {(invitations.length > 0) &&
-                <button onClick={onClickSentInvitations}>Отправить приглашение</button>
+                <button onClick={onClickSentInvitations} className={s.btn}>Отправить приглашение</button>
               }
           </>
           }

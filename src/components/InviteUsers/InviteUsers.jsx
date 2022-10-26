@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useFetching } from '../../hooks/useFetching';
 import Success from '../Success/Success';
 import Users from '../Users/Users';
 import s from './style.module.css';
@@ -8,12 +9,16 @@ function InviteUsers() {
   const [users, setUsers] = useState([]);
   const [invitations, setInvitations] = useState([]);
   const [success, setSuccess] = useState(false);
-  useEffect(() => {
+  const [fetchUsers, error] = useFetching(()=> {
     axios
-      .get("https://reqres.in/api/users")
-      .then((data) => {
-        setUsers(data.data.data) ;
-      });
+    .get("https://reqres.in/api/users")
+    .then((data) => {
+      setUsers(data.data.data);
+    });
+  })
+  useEffect(() => {
+    fetchUsers();
+    console.log(error);
   }, []);
   function onClickInvate(id){
     if(invitations.includes(id)){

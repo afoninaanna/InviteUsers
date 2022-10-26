@@ -1,5 +1,7 @@
 import React from 'react'
 import s from './style.module.css'
+import plus from '../../assets/plus.svg';
+import minus from '../../assets/minus.svg';
 
 function User({ first_name, last_name, id, email, avatar, isInvated, onClickInvate}) {
   return (
@@ -11,7 +13,7 @@ function User({ first_name, last_name, id, email, avatar, isInvated, onClickInva
         </div>
         <img 
           onClick={() => onClickInvate(id)}
-          src={`/assets/${isInvated ? 'minus' : 'plus'}.svg`}
+          src={isInvated ? minus : plus}
           className={s.plusMinus}
         />
     </div>

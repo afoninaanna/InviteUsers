@@ -1,18 +1,19 @@
 import React from 'react'
 import s from './style.module.css'
 
-function User({ firstName, lastName, id, email, avatar, isInvated, onClickInvate}) {
+function User({ first_name, last_name, id, email, avatar, isInvated, onClickInvate}) {
   return (
     <div className={s.user}>
         <img src={avatar} className={s.avatar}/>
         <div className={s.content}>
-           <p className={s.fullName}>{firstName} {lastName}</p>
+           <p className={s.fullName}>{first_name} {last_name}</p>
            <span className={s.email}>{email}</span>
         </div>
-      <img 
-        onClick={() => onClickInvate(id)}
-        src={`/assets/${isInvated ? 'minus' : 'plus'}.svg`}
-        className={s.plusMinus}/>
+        <img 
+          onClick={() => onClickInvate(id)}
+          src={`/assets/${isInvated ? 'minus' : 'plus'}.svg`}
+          className={s.plusMinus}
+        />
     </div>
   )
 }

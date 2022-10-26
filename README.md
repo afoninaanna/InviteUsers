@@ -13,3 +13,5 @@
 Так выглядит интерфейс InviteUsers:
 
 ![Интерфейс InviteUsers](/public/inviteUsers.jpg)
+
+![Интерфейс InviteUsers](/public/success.jpg)
